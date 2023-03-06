@@ -1,1 +1,5 @@
-# vue3-admin-template
+<h1>vue-admin-client</h1>
+
+代码来自 [vue-pure-admin](https://github.com/pure-admin/vue-pure-admin)
+
+只做了一些简单的修改，以适用自己的项目。
