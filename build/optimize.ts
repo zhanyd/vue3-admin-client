@@ -17,7 +17,7 @@ const include = [
   "@pureadmin/utils",
   "responsive-storage",
   "element-resize-detector"
-];
+]
 
 /**
  * 在预构建中强制排除的依赖项
@@ -27,6 +27,6 @@ const exclude = [
   "@iconify-icons/ep",
   "@iconify-icons/ri",
   "@pureadmin/theme/dist/browser-utils"
-];
+]
 
-export { include, exclude };
+export { include, exclude }

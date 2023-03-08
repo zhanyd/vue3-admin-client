@@ -1,5 +1,5 @@
 // 模拟后端动态生成路由
-import { MockMethod } from "vite-plugin-mock";
+import { MockMethod } from "vite-plugin-mock"
 
 /**
  * roles：页面级别权限，这里模拟二种 "admin"、"common"
@@ -33,7 +33,7 @@ const permissionRouter = {
       }
     }
   ]
-};
+}
 
 export default [
   {
@@ -43,7 +43,7 @@ export default [
       return {
         success: true,
         data: [permissionRouter]
-      };
+      }
     }
   }
-] as MockMethod[];
+] as MockMethod[]

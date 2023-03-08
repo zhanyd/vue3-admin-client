@@ -1,18 +1,18 @@
-import { cdn } from "./cdn";
-import { resolve } from "path";
-import vue from "@vitejs/plugin-vue";
-import { viteBuildInfo } from "./info";
-import svgLoader from "vite-svg-loader";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import { cdn } from "./cdn"
+import { resolve } from "path"
+import vue from "@vitejs/plugin-vue"
+import { viteBuildInfo } from "./info"
+import svgLoader from "vite-svg-loader"
+import vueJsx from "@vitejs/plugin-vue-jsx"
 // import { viteMockServe } from "vite-plugin-mock";
-import { configCompressPlugin } from "./compress";
+import { configCompressPlugin } from "./compress"
 // import ElementPlus from "unplugin-element-plus/vite";
-import { visualizer } from "rollup-plugin-visualizer";
-import removeConsole from "vite-plugin-remove-console";
-import themePreprocessorPlugin from "@pureadmin/theme";
-import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
-import DefineOptions from "unplugin-vue-define-options/vite";
-import { genScssMultipleScopeVars } from "../src/layout/theme";
+import { visualizer } from "rollup-plugin-visualizer"
+import removeConsole from "vite-plugin-remove-console"
+import themePreprocessorPlugin from "@pureadmin/theme"
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite"
+import DefineOptions from "unplugin-vue-define-options/vite"
+import { genScssMultipleScopeVars } from "../src/layout/theme"
 
 export function getPluginsList(
   command: string,
@@ -20,7 +20,7 @@ export function getPluginsList(
   VITE_COMPRESSION: ViteCompression
 ) {
   // const prodMock = true;
-  const lifecycle = process.env.npm_lifecycle_event;
+  const lifecycle = process.env.npm_lifecycle_event
   return [
     vue(),
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
@@ -62,5 +62,5 @@ export function getPluginsList(
     lifecycle === "report"
       ? visualizer({ open: true, brotliSize: true, filename: "report.html" })
       : null
-  ];
+  ]
 }

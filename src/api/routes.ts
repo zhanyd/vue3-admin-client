@@ -1,10 +1,10 @@
-import { http } from "@/utils/http";
+import { http } from "@/utils/http"
 
 type Result = {
-  success: number;
-  data: Array<any>;
-};
+  success: number
+  data: Array<any>
+}
 
 export const getAsyncRoutes = () => {
-  return http.request<Result>("get", "user/getAsyncRoutes");
-};
+  return http.request<Result>("get", "user/getAsyncRoutes")
+}
