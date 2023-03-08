@@ -73,6 +73,7 @@ module.exports = {
     }
   ],
   rules: {
+    semi: "off", // 禁止尾部使用分号
     "vue/no-v-html": "off",
     "vue/require-default-prop": "off",
     "vue/require-explicit-emits": "off",
@@ -117,4 +118,4 @@ module.exports = {
       }
     ]
   }
-};
+}
