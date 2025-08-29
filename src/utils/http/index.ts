@@ -11,7 +11,7 @@ import type {
 } from "./types.d";
 import { stringify } from "qs";
 import NProgress from "../progress";
-import { getToken, formatToken } from "@/utils/auth";
+import { getToken, formatToken, removeToken } from "@/utils/auth";
 import { useUserStoreHook } from "@/store/modules/user";
 
 // 相关配置请参考：www.axios-js.com/zh-cn/docs/#axios-request-config-1
@@ -124,6 +124,20 @@ class PureHttp {
         const $config = response.config;
         // 关闭进度条动画
         NProgress.done();
+
+        // 检查响应数据中的code字段
+        if (response.data && response.data.code === 501) {
+          // token过期，清除本地存储并跳转到登录页
+          removeToken();
+          useUserStoreHook().logOut();
+          return Promise.reject(new Error("Token已过期，请重新登录"));
+        }
+
+        // 文件下载的时候要返回response
+        if (response.config.responseType === "blob") {
+          return response;
+        }
+
         // 优先判断post/get等方法是否传入回调，否则执行初始化设置等回调
         if (typeof $config.beforeResponseCallback === "function") {
           $config.beforeResponseCallback(response);
